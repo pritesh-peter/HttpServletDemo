@@ -13,7 +13,10 @@
         <servlet-name>registerservlet</servlet-name>
         <servlet-class>com.servlets.RegisterServlet</servlet-class>
     </servlet>
-    
+       <servlet>
+        <servlet-name>success</servlet-name>
+        <servlet-class>com.servlets.SuccessServlet</servlet-class>
+    </servlet>   
     <servlet-mapping>
         <servlet-name>myserv</servlet-name>
         <url-pattern>/serv</url-pattern>
@@ -22,8 +25,10 @@
         <servlet-name>registerservlet</servlet-name>
         <url-pattern>/registerservlet</url-pattern>
     </servlet-mapping>
-    
-    
+        <servlet-mapping>
+        <servlet-name>success</servlet-name>
+        <url-pattern>/success</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

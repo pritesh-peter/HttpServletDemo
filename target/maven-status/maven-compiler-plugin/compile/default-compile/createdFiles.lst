@@ -1,2 +1,3 @@
 com\servlets\RegisterServlet.class
 com\servlets\MyServlet.class
+com\servlets\SuccessServlet.class
