@@ -1,3 +1,5 @@
 com\servlets\RegisterServlet.class
+com\servlets\S1.class
 com\servlets\MyServlet.class
+com\servlets\S2.class
 com\servlets\SuccessServlet.class
