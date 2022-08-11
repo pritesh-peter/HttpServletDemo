@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,12 +26,18 @@ public class S1 extends HttpServlet {
             out.println("<h1>Servlet S1 at " + request.getContextPath() + "</h1>");
             int n1 = Integer.parseInt(request.getParameter("n1"));
             int n2 = Integer.parseInt(request.getParameter("n2"));
+            String name = request.getParameter("name");
             
             //sum
             int sum = n1+n2;
             
+            //Cookie setting
+            Cookie c = new Cookie("name",name);
+            
+            
             //attribute
             request.setAttribute("sum", sum);
+           response.addCookie(c);
             
             //request dispatcher
             RequestDispatcher rd = request.getRequestDispatcher("s2");

@@ -7,6 +7,7 @@ package com.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,9 +44,30 @@ public class S2 extends HttpServlet {
             //product
             int product = n1*n2;
             
+            //Cookie 
+            Cookie[] cookie = request.getCookies();
+            boolean f = false;
+            String name = "";
+            
+            //Check cookie
+            if(cookie==null){
+            out.println("<h2>You are a new user</h2>");
+            return;
+            }else{
+            for(Cookie c:cookie){
+            String tName = c.getName();
+            if(tName.equals("name")){
+            f=true;
+            name=c.getValue();
+            }
+            }
+            }
+            
+            
             //get attribute
             int sum = (int)request.getAttribute("sum");
             out.println("<h2>");
+            out.println("Welcome"+name);
             out.println("Sum is: "+sum);
             out.println("Product is: "+product);
             out.println("</h2>");
